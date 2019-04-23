@@ -163,8 +163,8 @@ def combine_statistics(inputfolder, print_progress=False):
             array.append(data)
             if print_progress:
                 print i+1, 'out of', total_length, 'is done'
-        data = pd.concat(array, ignore_index=True)
-        data.to_csv(inputfolder[:-1] + '.csv', sep='\t', sort=True)
+        data = pd.concat(array, ignore_index=True, sort=True)
+        data.to_csv(inputfolder[:-1] + '.csv', sep='\t')
         if print_progress:
             print 'Combining files finished'
 
