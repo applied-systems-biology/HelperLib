@@ -155,19 +155,18 @@ def combine_statistics(inputfolder, print_progress=False):
         subfolders = list_subfolders(inputfolder, extensions=['csv'])
         total_length = len(subfolders)
 
-        data = pd.read_csv(inputfolder + subfolders[0], sep='\t', index_col=0)
-        data.to_csv(inputfolder[:-1] + '.csv', sep='\t')
         if print_progress:
-            print 'Combining files started...'
-        for i, sf in enumerate(subfolders[1:]):
+            print('Combining files started...')
+        array = []
+        for i, sf in enumerate(subfolders):
             data = pd.read_csv(inputfolder + sf, sep='\t', index_col=0)
-            data.to_csv(inputfolder[:-1] + '.csv', mode='a', header=False, sep='\t')
+            array.append(data)
             if print_progress:
-                print i+2, 'out of', total_length, 'is done'
-        data = pd.read_csv(inputfolder[:-1] + '.csv', sep='\t', index_col=0).reset_index(drop=True)
+                print(i+1, 'out of', total_length, 'is done')
+        data = pd.concat(array, ignore_index=True, sort=True)
         data.to_csv(inputfolder[:-1] + '.csv', sep='\t')
         if print_progress:
-            print 'Combining files finished'
+            print('Combining files finished')
 
 
 def imsave(outputfile, img):

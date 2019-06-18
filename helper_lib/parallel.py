@@ -47,7 +47,7 @@ def _print_progress(procdone, totproc, start):
             left = left/60.
             units = 'hours'
 
-    print 'done', procdone, 'of', totproc, '(', donepercent, '% ), approx. time left: ', left, units
+    print('done', procdone, 'of', totproc, '(', donepercent, '% ), approx. time left: ', left, units)
 
 
 def run_parallel(process, process_name=None, print_progress=True, **kwargs):
@@ -90,7 +90,7 @@ def run_parallel(process, process_name=None, print_progress=True, **kwargs):
         process_name = process.func_name
 
     if print_progress:
-        print 'Run', process_name
+        print('Run', process_name)
 
     procs = []
 
@@ -99,7 +99,7 @@ def run_parallel(process, process_name=None, print_progress=True, **kwargs):
     start = time.time()
 
     if print_progress:
-        print 'Started at ', time.ctime()
+        print('Started at ', time.ctime())
 
     for i, cur_item in enumerate(items):
 
@@ -128,7 +128,7 @@ def run_parallel(process, process_name=None, print_progress=True, **kwargs):
                  _print_progress(procdone, totproc, start)
 
     if print_progress:
-        print process_name, 'done'
+        print(process_name, 'done')
 
 
 
