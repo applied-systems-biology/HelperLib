@@ -15,7 +15,13 @@ Auxiliary package for working with files and statistics and for parallel image p
 
 ## Installation
 
-1. Install [python 2.7 Anaconda](https://www.anaconda.com/distribution/)
+1. Download the HelperLib package
+1. Enter the HelperLib directory and install the HelperLib package by running ``python setup.py install`` 
+
+
+## Installation within Anaconda
+
+1. Install [python Anaconda](https://www.anaconda.com/distribution/)
 1. Download the HelperLib package
 1. Enter the HelperLib directory and install the HelperLib package by running ``python setup.py install`` withing the Anaconda environment
 
