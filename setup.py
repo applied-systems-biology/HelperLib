@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(
-    name='helperlib',    
+    name='helper_lib',
     version='2.1',
     url="https://github.com/applied-systems-biology/HelperLib",
     author="Anna Medyukhina",
