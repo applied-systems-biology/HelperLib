@@ -87,7 +87,7 @@ def run_parallel(process, process_name=None, print_progress=True, **kwargs):
     items = kwargs.pop('items', [])
     max_threads = int(round(kwargs.pop('max_threads', 8)))
     if process_name is None:
-        process_name = process.func_name
+        process_name = process.__name__
 
     if print_progress:
         print('Run', process_name)
